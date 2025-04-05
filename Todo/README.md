@@ -26,7 +26,7 @@ interface. Great for beginners learning React and `useState`.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/martinristow/react-beginners-projects/tree/main/Counter
+   git clone https://github.com/martinristow/react-beginners-projects/tree/main/Todo
 
 2. Install dependencies:
     ```bash
