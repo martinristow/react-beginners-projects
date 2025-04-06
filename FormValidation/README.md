@@ -1,6 +1,8 @@
 # 🧾 React Form Validation
 
-A simple and responsive form built with React that includes dynamic validation for username, email, password, and password confirmation. This project demonstrates the use of controlled components, form validation, and real-time user feedback with colored borders and error messages.
+A simple and responsive form built with React that includes dynamic validation for username, email, password, and
+password confirmation. This project demonstrates the use of controlled components, form validation, and real-time user
+feedback with colored borders and error messages.
 
 ## 🚀 Features
 
@@ -29,13 +31,13 @@ A simple and responsive form built with React that includes dynamic validation f
 - Applies conditional styling based on input validity
 
 ## 📁 Project Structure
+
     src 
     ├── Components 
     │ └── Form.jsx 
     ├── style.css 
     ├── App.jsx 
     ├── main.jsx
-
 
 ## 🛠️ Installation
 
