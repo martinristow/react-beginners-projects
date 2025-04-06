@@ -1,12 +1,20 @@
 import {useState} from 'react'
+import {evaluate} from 'mathjs';
 import '../style.css'
 
 const Calculator = () => {
+    const values = ['/', '*', '7', '8', '9', '-', '4', '5', '6', '+', '1', '2', '3', '0', '.'];
 
     const [inputValue, setInputValue] = useState('');
 
     const display = (value) => setInputValue(inputValue + value);
-    const calculate = () => setInputValue(eval(inputValue));
+    const calculate = () => {
+        try {
+            setInputValue(evaluate(inputValue));
+        } catch (error) {
+            setInputValue('Error');
+        }
+    };
 
     const clear = () => setInputValue('');
 
@@ -14,26 +22,17 @@ const Calculator = () => {
         <form className='calculator' name='calc'>
             <input type="text" className="value" value={inputValue}/>
 
-            {/*<span className="num clear" onClick={clear}>c</span>*/}
             <span className="num clear" onClick={() => clear()}>c</span>
 
-            <span onClick={() => display('/')}>/</span>
-            <span onClick={() => display('*')}>*</span>
-            <span onClick={() => display('7')}>7</span>
-            <span onClick={() => display('8')}>8</span>
-            <span onClick={() => display('9')}>9</span>
-            <span onClick={() => display('-')}>-</span>
-            <span onClick={() => display('4')}>4</span>
-            <span onClick={() => display('5')}>5</span>
-            <span onClick={() => display('6')}>6</span>
-            <span className="plus" onClick={()=> display('+')}>+</span>
+            {
+                values.map((value, index) => {
+                    return value === '+' ? (
+                        <span className='plus' key={index} onClick={() => display(value)}>{value}</span>) : (
+                        <span key={index} onClick={() => display(value)}>{value}</span>)
+                })
+            }
 
-            <span onClick={()=> display('1')}>1</span>
-            <span onClick={()=> display('2')}>2</span>
-            <span onClick={()=> display('3')}>3</span>
-            <span onClick={()=> display('0')}>0</span>
-            <span onClick={()=> display('.')}>.</span>
-            <span className='num equal' onClick={()=> calculate()}>=</span>
+            <span className='num equal' onClick={() => calculate()}>=</span>
 
         </form>
     )
