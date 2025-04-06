@@ -1,8 +1,11 @@
 import React from 'react'
+import Form from "./Components/Form.jsx";
 
 const App = () => {
     return (
-        <div>App</div>
+        <div>
+            <Form/>
+        </div>
     )
 }
 export default App
