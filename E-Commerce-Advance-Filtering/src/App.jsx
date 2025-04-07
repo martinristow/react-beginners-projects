@@ -1,9 +1,14 @@
 import React from 'react'
+import {Nav} from "./Navigation/Nav.jsx";
+import Products from "./Products/Products.jsx";
+import Recommended from "./Recommended/Recommended.jsx";
 
 const App = () => {
     return (
         <div>
-            <h1>Hello World</h1>
+            <Nav/>
+            <Products />
+            <Recommended/>
         </div>
     )
 }
